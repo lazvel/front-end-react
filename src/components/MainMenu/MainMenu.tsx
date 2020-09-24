@@ -15,12 +15,38 @@ interface MainMenuProperties {
     items: MainMenuItem[];
 }
 
+interface MainMenuState {
+    items: MainMenuItem[]; // moze imati color, background itd..
+}
+
 export class MainMenu extends React.Component<MainMenuProperties>{
+    state: MainMenuState;
+
+    constructor(props: Readonly<MainMenuProperties>) {
+        super(props)
+    
+        this.state = {
+          items: props.items,   
+        };
+
+        setInterval(() => {
+            const novaLista = [...this.state.items];
+            novaLista.push(new MainMenuItem("Naslov", "/link"));
+            this.setItems(novaLista);
+        }, 2000);
+    }
+    
+    setItems(items: MainMenuItem[]) {
+        this.setState({
+            items: items,
+        });
+    }
+    
     render() {
         return (
             <Container>
                 <Nav variant="tabs">
-                    { this.props.items.map(this.makeNavLink) }
+                    { this.state.items.map(this.makeNavLink) }
                 </Nav>
             </Container>
         );
