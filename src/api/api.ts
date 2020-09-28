@@ -58,7 +58,6 @@ async function responseHandler(
     resolve: (value?: ApiResponse) => void, 
 ) {
     if (res.status < 200 || res.status >= 300) { // nepovoljan ishod
-        
         const response: ApiResponse = {
             status: 'error',
             data: res.data,
@@ -78,9 +77,10 @@ async function responseHandler(
             status: 'ok',
             data: res.data,
         };
-    }
+    } 
 
-    resolve(response); // povoljan ishod 
+    resolve(response);
+  
 }
 
 function getToken(): string {
@@ -116,7 +116,7 @@ async function refreshToken(
             headers: {
                 'Content-Type': 'application/json',
             },
-        }
+        };
         // rtr -> refreshTokenResponse
         const rtr: { data : { token: string | undefined}} = await axios(refreshTokenRequestData);
 
@@ -144,7 +144,7 @@ async function repeatRequest(
             } else {
                 response = {
                     status: 'ok',
-                    data: res,
+                    data: res.data,
                 };
             }
 

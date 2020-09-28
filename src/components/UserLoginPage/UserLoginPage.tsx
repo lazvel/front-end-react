@@ -72,7 +72,7 @@ export default class UserLoginPage extends Component {
                     let message = '';
 
                     switch (res.data.statusCode) {
-                        case -3001: message = 'Unkown e-mail!'; break;
+                        case -3001: message = 'Unkown email!'; break;
                         case -3002: message = 'Bad password!'; break;
                     }
 
@@ -124,7 +124,8 @@ export default class UserLoginPage extends Component {
                                     Log in</Button>
                                 </Form.Group>
                             </Form>
-                            <Alert variant="danger" className={ this.state.errorMessage ? '' : 'd-none' }>
+                            <Alert variant="danger" 
+                                className={ this.state.errorMessage ? '' : 'd-none' }>
                                 { this.state.errorMessage }
                             </Alert>
                         </Card.Body>
