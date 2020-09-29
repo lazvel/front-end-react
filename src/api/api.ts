@@ -140,7 +140,6 @@ async function repeatRequest(
                     status: 'login',
                     data: null,
                 };
-        
             } else {
                 response = {
                     status: 'ok',
