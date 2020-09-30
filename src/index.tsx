@@ -22,9 +22,6 @@ const menuItems = [
   new MainMenuItem("Log in", "/user/login"),
   new MainMenuItem("Register", "/user/register"),
 
-  new MainMenuItem("Cat 1", "/category/1"),
-  new MainMenuItem("Cat 7", "/category/7"),
-  new MainMenuItem("Cat 21", "/category/21"),
 ];
 
 ReactDOM.render(

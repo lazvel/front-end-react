@@ -70,9 +70,8 @@ export default class UserLoginPage extends Component {
         api('auth/user/login', 'post', data)
             .then((res: ApiResponse) => {
                 console.log(res);
-                if (res.status === 'error') {
+                if (res.status === "error") {
                     this.setErrorMessage('System error... Try again!');
-
                     return;
                 }
 

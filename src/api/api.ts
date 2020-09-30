@@ -85,7 +85,7 @@ async function responseHandler(
 
 function getToken(): string {
     const token = localStorage.getItem('api_token');
-    return 'Bearer' + token;
+    return 'Bearer ' + token;
 }
 
 export function saveToken(token: string) {
@@ -157,5 +157,5 @@ async function repeatRequest(
 
             return resolve(response);
         });
-}
+    }
 
