@@ -1,6 +1,7 @@
 import React  from 'react';
 import { Container, Nav } from 'react-bootstrap';
 import { HashRouter, Link } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 
 export class MainMenuItem {
     text: string = '';
@@ -49,6 +50,7 @@ export class MainMenu extends React.Component<MainMenuProperties>{
                 <Nav variant="tabs">
                     <HashRouter>
                         { this.state.items.map(this.makeNavLink) }
+                        <Cart />
                     </HashRouter>
                 </Nav>
             </Container>
