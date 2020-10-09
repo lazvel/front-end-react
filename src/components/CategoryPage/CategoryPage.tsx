@@ -7,6 +7,7 @@ import api, { ApiResponse } from '../../api/api';
 import { ApiConfig } from '../../config/api.config';
 import ArticleType from '../../types/ArticleType';
 import CategoryType from '../../types/CategoryType';
+import RoledMainMenu from '../RoledMainMenu/RoledMainMenu';
 import SingleArticlePreview from '../SingleArticlePreview/SingleArticlePreview';
 
 interface CategoryPageProperties {
@@ -123,6 +124,8 @@ export class CategoryPage extends Component<CategoryPageProperties> {
         }
         return (
             <Container>
+                <RoledMainMenu role="user" /> 
+                
                 <Card>
                     <Card.Body>
                         <Card.Title>

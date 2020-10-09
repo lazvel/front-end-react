@@ -205,7 +205,7 @@ export default class Cart extends Component {
                                     <td className="text-right">
                                         <strong>Total:</strong>
                                     </td>
-                                    <td className="text-right">{ Number(sum).toFixed(2) }</td>
+                                    <td className="text-right">{ Number(sum).toFixed(2) } EUR</td>
                                     <td></td>
                                 </tr>
                             </tfoot>

@@ -5,15 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CategoryType from '../../types/CategoryType';
 import { Link, Redirect } from 'react-router-dom';
 import api, { ApiResponse } from '../../api/api';
+import RoledMainMenu from '../RoledMainMenu/RoledMainMenu';
+import ApiCategoryDto from '../../dtos/ApiCategoryDto';
 
 interface HomePageState {
     isUserLoggedIn: boolean;
     categories: CategoryType[];
-}
-
-interface ApiCategoryDto {
-    categoryId: number;
-    name: string;
 }
 
 export default class HomePage extends Component {
@@ -28,11 +25,11 @@ export default class HomePage extends Component {
         };
     }
     
-    componentWillMount() {
+    componentDidMount() {
         this.getCategories(); 
     }
 
-    componentWillUpdate() {
+    componentDidUpdate() {
         this.getCategories(); 
     }
 
@@ -48,8 +45,8 @@ export default class HomePage extends Component {
         });
     }
 
-    private putCategoriesInState(data: ApiCategoryDto[]) {
-        const categories: CategoryType[] = data.map(category => {
+    private putCategoriesInState(data?: ApiCategoryDto[]) {
+        const categories: CategoryType[] | undefined = data?.map(category => {
             return {
                 categoryId: category.categoryId,
                 name: category.name,
@@ -80,6 +77,7 @@ export default class HomePage extends Component {
         }
         return (
             <Container>
+                <RoledMainMenu role="user" />
                 <Card>
                     <Card.Body>
                         <Card.Title>

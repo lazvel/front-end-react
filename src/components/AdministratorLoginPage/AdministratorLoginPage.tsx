@@ -6,9 +6,9 @@ import api, { ApiResponse, saveToken, saveRefreshToken, saveIdentity } from '../
 import { Redirect } from 'react-router-dom';
 import RoledMainMenu from '../RoledMainMenu/RoledMainMenu';
 
-interface UserLoginPageState {
+interface AdministratorLoginPageState {
     formData: {
-        email: string,
+        username: string,
         password: string,
     }
     
@@ -17,19 +17,19 @@ interface UserLoginPageState {
 }
 
 
-export default class UserLoginPage extends Component {
-    state: UserLoginPageState;
+export default class AdministratorLoginPage extends Component {
+    state: AdministratorLoginPageState;
 
     constructor(props: Readonly<{}>) {
         super(props)
     
         this.state = {
+            formData: {
+                username: '',
+                password: '',
+            },
             errorMessage: '',
             isLoggedIn: false,
-            formData: {
-                email: '',
-                password: '',
-            }
         }
     }
     
@@ -37,12 +37,10 @@ export default class UserLoginPage extends Component {
         const newFormData = Object.assign(this.state.formData, {
             [ event.target.id ]: event.target.value,
         })
-        
-        const newState = Object.assign(this.state, {
-            formData: newFormData,
-        });
 
-        this.setState(newState);
+        this.setState(Object.assign(this.state, {
+            formData: newFormData,
+        }));
     }
 
     private setErrorMessage(message: string) {
@@ -63,13 +61,12 @@ export default class UserLoginPage extends Component {
 
     private doLogin() {
         const data = {
-            email: this.state.formData.email,
+            username: this.state.formData.username,
             password: this.state.formData.password,
         };
 
-        api('auth/user/login', 'post', data)
+        api('auth/administrator/login', 'post', data)
             .then((res: ApiResponse) => {
-                console.log(res);
                 if (res.status === "error") {
                     this.setErrorMessage('System error... Try again!');
                     return;
@@ -80,7 +77,7 @@ export default class UserLoginPage extends Component {
                         let message = '';
 
                         switch (res.data.statusCode) {
-                            case -3001: message = 'Unkown email!'; break;
+                            case -3001: message = 'Unkown username!'; break;
                             case -3002: message = 'Bad password!'; break;
                         }
 
@@ -89,9 +86,9 @@ export default class UserLoginPage extends Component {
                         return;
                     }
 
-                    saveToken('user', res.data.token);
-                    saveRefreshToken('user', res.data.refreshToken);
-                    saveIdentity('user', res.data.identity);
+                    saveToken('administrator', res.data.token);
+                    saveRefreshToken('administrator', res.data.refreshToken);
+                    saveIdentity('administrator', res.data.identity);
 
                     this.setLoginState(true);
                 } 
@@ -101,23 +98,24 @@ export default class UserLoginPage extends Component {
     render() {
         if (this.state.isLoggedIn === true) {
             return (
-                <Redirect to="/" />
+                <Redirect to="/administrator/dashboard" />
             );
         }
         return (
             <Container>
                 <RoledMainMenu role="visitor" /> 
+                
                 <Col md={ { span: 6, offset: 3 } }>
                     <Card>
                         <Card.Body>
                             <Card.Title>
-                                <FontAwesomeIcon icon={ faUser} />User Login
+                                <FontAwesomeIcon icon={ faUser} />Administrator Login
                             </Card.Title>
                             <Form>
                                 <Form.Group>
-                                    <Form.Label htmlFor="email">E-mail:</Form.Label>
-                                    <Form.Control type="email" id="email" 
-                                        value={ this.state.formData.email }
+                                    <Form.Label htmlFor="username">Username:</Form.Label>
+                                    <Form.Control type="username" id="username" 
+                                        value={ this.state.formData.username }
                                         onChange={ event => this.formInputChanged(event as any) } />
                                 </Form.Group>
                                 <Form.Group>
