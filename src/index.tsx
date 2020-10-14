@@ -7,7 +7,6 @@ import 'jquery/dist/jquery';
 import 'popper.js/dist/popper';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '@fortawesome/fontawesome-free/css/fontawesome.css';
-import { MainMenu, MainMenuItem } from './components/MainMenu/MainMenu';
 import { HashRouter, Route } from 'react-router-dom';
 import Switch from 'react-bootstrap/esm/Switch';
 import HomePage from './components/HomePage/HomePage';
@@ -20,6 +19,7 @@ import AdministratorLoginPage from './components/AdministratorLoginPage/Administ
 import AdministratorDashboard from './components/AdministratorDashboard/AdministratorDashboard';
 import AdministratorDashboardCategory from './components/AdministratorDashboardCategory/AdministratorDashboardCategory';
 import AdministratorDashboardFeature from './components/AdministratorDashboardFeature/AdministratorDashboardFeature';
+import AdministratorDashboardArticle from './components/AdministratorDashboardArticle/AdministratorDashboardArticle';
 
 
 
@@ -37,6 +37,7 @@ ReactDOM.render(
         <Route exact path="/administrator/dashboard" component={ AdministratorDashboard } />
         <Route path="/administrator/dashboard/category/" component={ AdministratorDashboardCategory } />
         <Route path="/administrator/dashboard/feature/:cId" component={ AdministratorDashboardFeature } />
+        <Route path="/administrator/dashboard/article/" component= { AdministratorDashboardArticle } />
       </Switch>
     </HashRouter>
   </React.StrictMode>,
