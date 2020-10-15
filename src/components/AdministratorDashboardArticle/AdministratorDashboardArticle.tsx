@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, Button, Card, Col, Container, Form, Modal, Row, Table } from 'react-bootstrap';
-import { faEdit, faListAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faListAlt, faPhotoVideo, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ArticleType from '../../types/ArticleType';
 import { Link, Redirect } from 'react-router-dom';
@@ -381,6 +381,10 @@ class AdministratorDashboardArticle extends Component {
                                         <td>{ article.isPromoted ? 'Yes' : 'No' }</td>
                                         <td className="text-right">{ article.price }</td>
                                         <td className="text-center">
+                                            <Link to= { "/administrator/dashboard/photo/" + article.articleId } 
+                                                className="btn btn-sm btn-info mr-3">
+                                                <FontAwesomeIcon icon={ faPhotoVideo } />
+                                            </Link>
 
                                         <Button variant="info"
                                             onClick={() => this.showEditModal(article)}>
