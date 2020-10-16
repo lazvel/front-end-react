@@ -21,6 +21,7 @@ import AdministratorDashboardCategory from './components/AdministratorDashboardC
 import AdministratorDashboardFeature from './components/AdministratorDashboardFeature/AdministratorDashboardFeature';
 import AdministratorDashboardArticle from './components/AdministratorDashboardArticle/AdministratorDashboardArticle';
 import AdministratorDashboardPhoto from './components/AdministratorDashboardPhoto/AdministratorDashboardPhoto';
+import ArticlePage from './components/ArticlePage/ArticlePage';
 
 
 
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Route path="/user/login" component={ UserLoginPage } />
         <Route path="/user/register" component={ UserRegistrationPage } />
         <Route path="/category/:cId" component={ CategoryPage } />
+        <Route path="/article/:aId" component={ ArticlePage } />
         <Route path="/user/orders" component={ OrdersPage } />
         <Route path="/administrator/login" component={ AdministratorLoginPage } />
         <Route exact path="/administrator/dashboard" component={ AdministratorDashboard } />
