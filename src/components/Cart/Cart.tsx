@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react'
 import { Alert, Button, Form, Modal, Nav, Table } from 'react-bootstrap';
 import api, { ApiResponse } from '../../api/api';
-import CartType from '../../types/Cart.Type'
+import CartType from '../../types/CartType';
 
 interface CartState {
     count: number;
@@ -124,7 +124,7 @@ export default class Cart extends Component {
     }
 
     private makeOrder() {
-        api('api/user/cart/makeOrder/', 'post', {})
+        api('/api/user/cart/makeOrder/', 'post', {})
         .then((res: ApiResponse) => {
             if (res.status === 'error' || res.status === 'login') {
                 this.setStateCount(0);

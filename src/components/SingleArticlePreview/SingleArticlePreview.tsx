@@ -10,11 +10,6 @@ interface SingleArticlePreviewProperties {
 }
 
 export default class SingleArticlePreview extends Component<SingleArticlePreviewProperties> {    
-    constructor(props: Readonly<SingleArticlePreviewProperties>) {
-        super(props);
-        
-    }
-
     
     render() {
         return (

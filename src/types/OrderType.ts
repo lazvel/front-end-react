@@ -1,4 +1,4 @@
-import CartType from "./Cart.Type";
+import CartType from "./CartType";
 
 export default interface OrderType {
     orderId: number;

@@ -22,6 +22,7 @@ import AdministratorDashboardFeature from './components/AdministratorDashboardFe
 import AdministratorDashboardArticle from './components/AdministratorDashboardArticle/AdministratorDashboardArticle';
 import AdministratorDashboardPhoto from './components/AdministratorDashboardPhoto/AdministratorDashboardPhoto';
 import ArticlePage from './components/ArticlePage/ArticlePage';
+import AdministratorDashboardOrder from './components/AdministratorDashboardOrder/AdministratorDashboardOrder';
 
 
 
@@ -42,6 +43,7 @@ ReactDOM.render(
         <Route path="/administrator/dashboard/feature/:cId" component={ AdministratorDashboardFeature } />
         <Route path="/administrator/dashboard/article/" component= { AdministratorDashboardArticle } />
         <Route path="/administrator/dashboard/photo/:aId" component= { AdministratorDashboardPhoto } />
+        <Route path="/administrator/dashboard/order" component= { AdministratorDashboardOrder } />
       </Switch>
     </HashRouter>
   </React.StrictMode>,

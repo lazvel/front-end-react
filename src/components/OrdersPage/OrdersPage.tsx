@@ -5,7 +5,7 @@ import api, { ApiResponse } from '../../api/api';
 import { Container, Card, Table, Modal, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBox, faBoxOpen } from '@fortawesome/free-solid-svg-icons';
-import CartType from '../../types/Cart.Type';
+import CartType from '../../types/CartType';
 import RoledMainMenu from '../RoledMainMenu/RoledMainMenu';
 
 interface OrdersPageState {

@@ -1,5 +1,5 @@
 /* eslint-disable no-unreachable */
-import { faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react'
 import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';

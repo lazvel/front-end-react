@@ -73,8 +73,9 @@ class AdministratorDashboard extends Component {
 
                         <ul>
                             <li><Link to="/administrator/dashboard/category/">Categories</Link></li>
-                            <li><Link to="/administrator/dashboard/feature/">Features</Link></li>
                             <li><Link to="/administrator/dashboard/article/">Articles</Link></li>
+                            <li><Link to="/administrator/dashboard/order/">Orders</Link></li>
+
                         </ul>
                     </Card.Body>
                 </Card>
