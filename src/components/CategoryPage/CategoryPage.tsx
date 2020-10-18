@@ -269,7 +269,7 @@ export class CategoryPage extends Component<CategoryPageProperties> {
     }
 
     private addFeatureFilterValue(featureId: number, value: string) {
-        const newSelectedFeatures = [ ... this.state.filters.selectedFeatures];
+        const newSelectedFeatures = [ ...this.state.filters.selectedFeatures];
         
         newSelectedFeatures.push({
             featureId: featureId,

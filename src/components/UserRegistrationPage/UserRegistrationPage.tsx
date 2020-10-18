@@ -46,7 +46,7 @@ export class UserRegistrationPage extends Component {
         <Container>
             <RoledMainMenu role="visitor" /> 
             
-            <Col md={ { span: 8, offset: 2 } }>
+            <Col md={ { span: 8, offset: 2 } } className="mt-3">
                 <Card>
                     <Card.Body>
                         <Card.Title>

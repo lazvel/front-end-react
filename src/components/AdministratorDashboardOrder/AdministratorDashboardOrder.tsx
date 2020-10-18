@@ -1,4 +1,4 @@
-import { faBoxOpen, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faBatteryQuarter, faBoxOpen, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react'
 import { Button, Card, Container, Modal, Tab, Table, Tabs } from 'react-bootstrap';
@@ -8,6 +8,7 @@ import ApiOrderDto from '../../dtos/ApiOrderDto'
 import CartType from '../../types/CartType';
 import OrderType from '../../types/OrderType';
 import RoledMainMenu from '../RoledMainMenu/RoledMainMenu';
+import './Button.css';
 
 interface AdministratorDashboardOrderState {
     isAdministratorLoggedIn: boolean;
@@ -254,7 +255,12 @@ export default class AdministratorDashboardOrder extends Component {
                         </Table>
                     </Modal.Body>
                 </Modal>
+
+                <Button className="dugme">
+                    <FontAwesomeIcon icon={ faBatteryQuarter } />
+                </Button>
             </Container>
+            
         );
     }
 

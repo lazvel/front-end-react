@@ -105,7 +105,7 @@ export default class AdministratorLoginPage extends Component {
             <Container>
                 <RoledMainMenu role="visitor" /> 
                 
-                <Col md={ { span: 6, offset: 3 } }>
+                <Col md={ { span: 6, offset: 3 } } className="mt-3">
                     <Card>
                         <Card.Body>
                             <Card.Title>
